@@ -2,6 +2,14 @@
 {% load static %}
 
 {% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{lf}}
+    <input type="submit" value="Save">
+</form>
+
+
 <img src="{% static 'image/1.avif' %}" alt="">
-<h1>about</h1>
+
+<h1>About</h1>
 {% endblock content %}
