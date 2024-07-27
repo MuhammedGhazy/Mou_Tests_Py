@@ -1,0 +1,23 @@
+{% extends 'o_s/base.html' %}
+
+{% block block_title %}
+<h1> All_Students</h1>
+{% endblock %}
+
+{% block main_block %}
+
+<table border = '1'>
+    <th> First_Name</th> <th> Last_Name</th> <th> Age</th> <th> Track</th> <th>  Graduated</th> <th> ID</th>
+    {% for i in students%}
+    <tr>
+        <td><a href = '/student/{{i.id}}'>{{i.fname}}</a></td>
+        <td>{{i.lname}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.relation}}</td>
+        <td>{{i.is_graduated}}</td>
+        <td>{{i.id}}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,9 @@
+<h1> Add new student </h1>
+
+<form method = 'POST'> {% csrf_token %}
+    {{st_form.as_p}}
+    <button type = 'submit'>save</button>
+    <button type = 'reset'>clear</button>
+
+
+</form>
