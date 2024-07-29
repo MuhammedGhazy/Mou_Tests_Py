@@ -6,6 +6,14 @@ class StudentForm(forms.ModelForm):
         model = Student
         fields = ('fname', 'lname', 'age', 'relation')
 
+        widgets = {
+            'fname': forms.TextInput(attrs={'class': 'form-control'}),
+            'lname': forms.TextInput(attrs={'class': 'form-control'}),
+            'age': forms.NumberInput(attrs={'class': 'form-control'}),
+            'relation': forms.Select(attrs={'class': 'form-control'})
+            
+        }
+
 class TrackForm(forms.ModelForm):
     class Meta:
         model = Track

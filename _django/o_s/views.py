@@ -27,3 +27,20 @@ def new_student(request):
             std_form=StudentForm()
     context = {'st_form' : std_form }
     return render (request,'o_s/new_student.html', context )
+
+def editStudent(request, st_id):
+     st = Student.objects.get(id = st_id)
+     st_form = StudentForm(instance=st)
+     if request.method == 'POST':
+          st_form = StudentForm(request.POST, instance = st)
+          if st_form.is_valid():
+               st_form.save()
+               return HttpResponseRedirect('/all')
+
+     context = {'st_form' : st_form}
+     return render(request, 'o_s/new_student.html', context)
+
+def Delete (request, st_id):
+     st = Student.objects.get(id = st_id)
+     st.delete()
+     return HttpResponseRedirect('/all')
