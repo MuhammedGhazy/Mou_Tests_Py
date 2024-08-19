@@ -1,0 +1,26 @@
+{% extends 'o_s/base.html' %}
+
+{% block block_title %}
+<h1> All_Students</h1>
+<a href = '/new'>Add new student </a>
+{% endblock %}
+
+{% block main_block %}
+
+<table border = '1'>
+    <th> First_Name</th> <th> Last_Name</th> <th> Age</th> <th> Track</th> <th>  Graduated</th> <th> ID</th> <th colspan = 2> Actions</th>
+    {% for i in students%}
+    <tr>
+        <td><a href = '/student/{{i.id}}'>{{i.fname}}</a></td>
+        <td>{{i.lname}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.relation}}</td>
+        <td>{{i.is_graduated}}</td>
+        <td>{{i.id}}</td>
+        <td><a href = '/edit/{{i.id}}'> Edit</a></td>
+        <td><a href = '/delete/{{i.id}}'> Delete</a></td>
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

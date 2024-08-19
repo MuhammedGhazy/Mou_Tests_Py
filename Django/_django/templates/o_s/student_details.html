@@ -1,0 +1,17 @@
+{% extends 'o_s/base.html' %}
+{% load static %}
+{% block block_title %}
+
+<h1> Welcome : {{student.fname}} {{student.lname}}</h1>
+<br />
+<a href = '/all'> <img src = " {% static "image/images.png" %} " width="60" height="60" />
+</a>
+
+{% endblock%}
+{% block main_block %}
+
+<h3><b> First Name :</b> {{student.fname}}</h3>
+<h3><b> Last Name :</b> {{student.lname}}</h3>
+<h3><b> Age :</b> {{student.age}}</h3>
+<h3><b> Track :</b> {{student.relation}}</h3>
+{% endblock%}

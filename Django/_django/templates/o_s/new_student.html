@@ -1,0 +1,17 @@
+{% extends 'o_s/base.html' %}
+
+{% block block_title %}
+<h1> Add new student </h1>
+{% endblock %}
+
+{% block main_block %}
+
+
+<form method = 'POST'> {% csrf_token %}
+    {{st_form.as_p}}
+    <button type = 'submit' class = 'btn btn-success'>save</button>
+    <button type = 'reset' class = 'btn btn-danger'>clear</button>
+
+
+</form>
+{% endblock %}
